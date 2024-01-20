@@ -17,11 +17,8 @@ public class CharacterController : MonoBehaviour
 
     [Header("Speed Curve")]
     public float speedCurveChange;
-<<<<<<< HEAD
+
     [HideInInspector]
-=======
-   
->>>>>>> bbfdbba42837e871bf6ba94228433032875f0b8b
     public float currentSpeedPos;
 
     public AnimationCurve speedCurve;
@@ -63,7 +60,6 @@ public class CharacterController : MonoBehaviour
         else if (speed > topSpeed / 5f) footStepSource.clip = footstepClips[3];
         else if (speed > topSpeed / 8f) footStepSource.clip = footstepClips[4];
         else if (speed > topSpeed / 13f) footStepSource.clip = footstepClips[5];
-        footStepSource.PlayOneShot();
     }
 
     void FixedUpdate()
