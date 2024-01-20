@@ -4,17 +4,15 @@ using UnityEngine;
 
 public class CharacterController : MonoBehaviour
 {
-    [Header("Move Speed")]
-    public float moveSpeed;
+    [Header("Speed Options")]
+    public float speed;
+    public float multiplier;
 
-    [Header("Orientation of Player")]
-    public Transform orientation;
+    public Transform player;
 
-    private Rigidbody2D rb;
 
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
     }
     void Update()
     {
@@ -34,6 +32,7 @@ public class CharacterController : MonoBehaviour
 
     private void MovePlayer()
     {
-        rb.AddRelativeForce(new Vector3(moveSpeed, 0.0f, 0.0f));
+        Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        player.position = Vector2.Lerp(player.position, mousePos, Time.deltaTime * speed * multiplier);
     }
 }
