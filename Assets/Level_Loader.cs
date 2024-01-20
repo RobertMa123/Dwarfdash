@@ -18,7 +18,7 @@ public class Level_Loader : MonoBehaviour
     }
     IEnumerator LoadLevel(int levelIndex)
     {
-        yield return new WaitForSeconds(3F);
+        yield return new WaitForSeconds(.5F);
         transition.SetTrigger("Start");
         yield return new WaitForSeconds(2f);
         SceneManager.LoadScene("Title Screen");

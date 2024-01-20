@@ -15,7 +15,6 @@ public class combatSystem : MonoBehaviour
     [SerializeField]
     private AudioClip inAttackRange;
     private AudioSource attackSource;
-    public Animator animator;
 
     private CharacterController character;
     public cinemachineControl camControl;
@@ -31,15 +30,8 @@ public class combatSystem : MonoBehaviour
         {
             attack();
         }
-        float RunAnimSpeed = 1 - character.currentSpeedPos;
-        if (RunAnimSpeed > 0)
-        {
-            animator.SetFloat("runSpeed", RunAnimSpeed);
-        }
-        else RunAnimSpeed = 0;
-
-        
     }
+
     private void attack()
     {
         //When attacking, check the overlap circle and then
@@ -50,11 +42,9 @@ public class combatSystem : MonoBehaviour
             if (collider != null)
             {
                 {
-                    animator.SetBool("Attack", true);
                     source.PlayOneShot(attackClip);
-                    if (collider.gameObject.tag == "enemy")
+                    if (collider.gameObject.GetComponent<enemyBehavior>() != null)
                     {
-                        
                         Debug.Log("hit");
                         source.PlayOneShot(attackClipHit);
                         Destroy(collider.gameObject);
@@ -64,13 +54,5 @@ public class combatSystem : MonoBehaviour
                 }
             }
         }
-        StartCoroutine(ResetHit());
     }
-
-    IEnumerator ResetHit()
-    {
-        yield return new WaitForSeconds(0.4f);
-        animator.SetBool("Attack", false);
-    }
-
 }

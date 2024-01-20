@@ -16,7 +16,6 @@ public class tileSpawner : MonoBehaviour
     private int randomNumberToSpawn = 0;
     [SerializeField]
     private int sizeOfEachPiece;
-    public int extraDist;
 
     private List<GameObject> piecesOnScreen = new List<GameObject>();
 
@@ -37,7 +36,7 @@ public class tileSpawner : MonoBehaviour
     private void Update()
     {
         Vector2 playerPos = playerObject.transform.position;
-        if (playerPos.y + extraDist> (piecesOnScreen[1].transform.position.y - (sizeOfEachPiece/2)))
+        if (playerPos.y > (piecesOnScreen[1].transform.position.y - (sizeOfEachPiece/2)))
         {
             spawnNewTile();
         }

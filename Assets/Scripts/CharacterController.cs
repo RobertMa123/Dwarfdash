@@ -7,7 +7,6 @@ public class CharacterController : MonoBehaviour
 {
     [Header("Speed Options")]
     public float speed;
-    public float multiplier;
     public float slowMultiplier;
     public float topSpeed;
 
@@ -17,21 +16,19 @@ public class CharacterController : MonoBehaviour
 
     [Header("Speed Curve")]
     public float speedCurveChange;
-
     [HideInInspector]
     public float currentSpeedPos;
 
-    public AnimationCurve speedCurve;
+    [SerializeField]
+    private float multiplierOfStaticness;
 
-    public float baseDelayMultiplier;
+    public AnimationCurve speedCurve;
 
     public Transform player;
 
-    [Header("Sounds")]
+    [Header("Wall Hit Sounds")]
     public AudioClip[] wallHitSounds;
-    public AudioClip[] footstepClips;
     public AudioSource source;
-    public AudioSource footStepSource;
 
     [Header("Easy Mode?")]
     public bool easyMode;
@@ -47,7 +44,7 @@ public class CharacterController : MonoBehaviour
     void Start()
     {
         playerRigid = GetComponent<Rigidbody2D>();
-        footStepSource.Play();
+
     }
     void Update()
     {
@@ -57,6 +54,7 @@ public class CharacterController : MonoBehaviour
 
     void FixedUpdate()
     {
+
     }
 
     public void boostOnKill()
@@ -90,29 +88,37 @@ public class CharacterController : MonoBehaviour
         }
         currentSpeedPos += Time.deltaTime * slowMultiplier;
 
+        if (dead == true)
+        {
+            currentSpeedPos = 1;
+        }
         speed = speedCurve.Evaluate(currentSpeedPos) * topSpeed;
-          
-        float delayMultiplier = baseDelayMultiplier * Vector2.Distance(player.transform.position, Input.mousePosition);
 
-        float reverseDistance = baseDelayMultiplier - Vector2.Distance(Input.mousePosition, playerRigid.position);
-        float fixedDistance = Mathf.Clamp(reverseDistance, 0f, 4f);
-        float delay = baseDelayMultiplier + fixedDistance;
+        if (speed <= 1)
+        {
+            onDeath();
+        }
 
 
         Vector2 mousePos = Input.mousePosition - Camera.main.WorldToScreenPoint(transform.position);
         Vector2 wantedDirection = mousePos.normalized * speed;
-        Vector2 currentDirection = Vector2.Lerp(playerRigid.velocity, wantedDirection, Time.deltaTime);
+        Vector2 currentDirection = Vector2.Lerp(playerRigid.velocity, wantedDirection, Time.deltaTime * multiplierOfStaticness);
 
         playerRigid.velocity = currentDirection;
     }
 
-    private void OnCollisionEnter2D(Collision2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.gameObject.tag == "enemy")
+        if (other.gameObject.tag == "enemy")
         {
-            dead = true;
-            particle.Play();
+            onDeath();
         }
         source.PlayOneShot(wallHitSounds[UnityEngine.Random.Range(1, wallHitSounds.Length)]);
+    }
+
+    private void onDeath()
+    {
+        dead = true;
+        particle.Play();
     }
 }
