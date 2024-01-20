@@ -17,7 +17,8 @@ public class CharacterController : MonoBehaviour
 
     [Header("Speed Curve")]
     public float speedCurveChange;
-    private float currentSpeedPos;
+    [HideInInspector]
+    public float currentSpeedPos;
 
     public AnimationCurve speedCurve;
 
