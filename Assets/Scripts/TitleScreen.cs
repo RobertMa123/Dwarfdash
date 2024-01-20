@@ -6,6 +6,9 @@ using static System.Net.Mime.MediaTypeNames;
 
 public class TitleScreen : MonoBehaviour
 {
+
+    public Animator transition;
+
     public void QuitGame()
     {
         UnityEngine.Application.Quit();
@@ -13,16 +16,23 @@ public class TitleScreen : MonoBehaviour
 
     public void EasyMode()
     {
-        SceneManager.LoadScene(1);
+        StartCoroutine(LoadLevel(1));
     }
 
     public void HardMode()
     {
-        SceneManager.LoadScene(2);
+        StartCoroutine(LoadLevel(2));
     }
 
     public void Credits()
     {
         SceneManager.LoadScene("Credits");
+    }
+
+    IEnumerator LoadLevel(int levelIndex)
+    {
+        transition.SetTrigger("Start");
+        yield return new WaitForSeconds(0.5f);
+        SceneManager.LoadScene(levelIndex);
     }
 }

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -24,10 +25,19 @@ public class CharacterController : MonoBehaviour
 
     public Transform player;
 
+    [Header("Wall Hit Sounds")]
+    public AudioClip[] wallHitSounds;
+    public AudioSource source;
+
     [Header("Easy Mode?")]
     public bool easyMode;
 
     private Rigidbody2D playerRigid;
+
+    [SerializeField]
+    private ParticleSystem particle;
+
+    public bool dead = false;
 
 
     void Start()
@@ -97,7 +107,9 @@ public class CharacterController : MonoBehaviour
     {
         if(other.gameObject.tag == "enemy")
         {
-            Destroy(gameObject, 0.5f);
+            dead = true;
+            particle.Play();
         }
+        source.PlayOneShot(wallHitSounds[UnityEngine.Random.Range(1, wallHitSounds.Length)]);
     }
 }

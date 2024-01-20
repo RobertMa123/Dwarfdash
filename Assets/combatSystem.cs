@@ -9,6 +9,10 @@ public class combatSystem : MonoBehaviour
     [SerializeField]
     private AudioClip attackClip;
     [SerializeField]
+    private AudioClip attackClipHit;
+    [SerializeField]
+    private AudioSource source;
+    [SerializeField]
     private AudioClip inAttackRange;
     private AudioSource attackSource;
 
@@ -37,12 +41,16 @@ public class combatSystem : MonoBehaviour
         {
             if (collider != null)
             {
-                if (collider.gameObject.tag == "enemy")
                 {
-                    Debug.Log("hit");
-                    Destroy(collider.gameObject);
-                    character.boostOnKill();
-                    camControl.lockAtPosition();
+                    source.PlayOneShot(attackClip);
+                    if (collider.gameObject.tag == "enemy")
+                    {
+                        Debug.Log("hit");
+                        source.PlayOneShot(attackClipHit);
+                        Destroy(collider.gameObject);
+                        character.boostOnKill();
+                        camControl.lockAtPosition();
+                    }
                 }
             }
         }
