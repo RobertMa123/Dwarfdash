@@ -9,6 +9,10 @@ public class combatSystem : MonoBehaviour
     [SerializeField]
     private AudioClip attackClip;
     [SerializeField]
+    private AudioClip attackClipHit;
+    [SerializeField]
+    private AudioSource source;
+    [SerializeField]
     private AudioClip inAttackRange;
     private AudioSource attackSource;
 
@@ -35,10 +39,12 @@ public class combatSystem : MonoBehaviour
         foreach (Collider2D collider in colliderHit)
         {
             if (collider != null)
-            {
-                if (collider.gameObject.tag == "Enemy")
+            {                
+                source.PlayOneShot(attackClip);
+                if (collider.gameObject.tag == "enemy")
                 {
                     Debug.Log("hit");
+                    source.PlayOneShot(attackClipHit);
                     Destroy(collider.gameObject);
                     character.boostOnKill();
                 }
