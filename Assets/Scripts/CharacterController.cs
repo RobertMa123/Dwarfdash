@@ -8,6 +8,11 @@ public class CharacterController : MonoBehaviour
     public float speed;
     public float multiplier;
 
+<<<<<<< Updated upstream
+=======
+    public float baseDelayMultiplier;
+
+>>>>>>> Stashed changes
     public Transform player;
 
 
@@ -16,6 +21,7 @@ public class CharacterController : MonoBehaviour
     }
     void Update()
     {
+        float delayMultiplier = baseDelayMultiplier * Vector2.Distance(player.transform.position, Input.mousePosition);
         LookAtMouse();
     }
     
