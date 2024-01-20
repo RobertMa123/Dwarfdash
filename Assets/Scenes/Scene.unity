@@ -443,7 +443,7 @@ Transform:
   m_GameObject: {fileID: 674454047}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.020000476, y: -0.03999976, z: -9.650604}
+  m_LocalPosition: {x: -0.020000238, y: -0.03999976, z: -9.650604}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -552,7 +552,7 @@ Transform:
   m_GameObject: {fileID: 747731725}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.020000476, y: -0.03999976, z: -9.650604}
+  m_LocalPosition: {x: -0.020000238, y: -0.03999976, z: -9.650604}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -975,8 +975,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a64cf594fcae1e4586f2316c9919ecf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackArea: 1
-  attackClip: {fileID: 0}
+  attackArea: 2
+  attackClip: {fileID: 8300000, guid: 5be3c9683c4a61747a18ae6e3d7c05c4, type: 3}
   attackClipHit: {fileID: 8300000, guid: da12c8629ebd2c447bf56e219c943d26, type: 3}
   source: {fileID: 1627024694}
   inAttackRange: {fileID: 8300000, guid: 420fca154b29a3746a7bcb0d76bd6d05, type: 3}
