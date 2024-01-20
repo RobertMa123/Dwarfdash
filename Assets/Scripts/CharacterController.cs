@@ -8,16 +8,8 @@ public class CharacterController : MonoBehaviour
     public float speed;
     public float multiplier;
 
-<<<<<<< HEAD
     public float baseDelayMultiplier;
 
-=======
-<<<<<<< Updated upstream
-=======
-    public float baseDelayMultiplier;
-
->>>>>>> Stashed changes
->>>>>>> main
     public Transform player;
 
     private Rigidbody2D playerRigid;
