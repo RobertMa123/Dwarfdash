@@ -36,6 +36,7 @@ public class CharacterController : MonoBehaviour
 
     void FixedUpdate()
     {
+
     }
 
     public void boostOnKill()
@@ -64,8 +65,8 @@ public class CharacterController : MonoBehaviour
                 speed = topSpeed;
             }
         }
-        speed += Time.deltaTime * speedUpMultiplier;
-          //Increase player speed over time
+        speed += Time.deltaTime * speedUpMultiplier;  //Increase player speed over time
+          
         float delayMultiplier = baseDelayMultiplier * Vector2.Distance(player.transform.position, Input.mousePosition);
 
         float reverseDistance = baseDelayMultiplier - Vector2.Distance(Input.mousePosition, playerRigid.position);
@@ -78,5 +79,13 @@ public class CharacterController : MonoBehaviour
         Vector2 currentDirection = Vector2.Lerp(playerRigid.velocity, wantedDirection, Time.deltaTime * delay);
 
         playerRigid.velocity = currentDirection;
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if(other.gameObject.tag == "enemy")
+        {
+            Destroy(gameObject, 0.5f);
+        }
     }
 }
