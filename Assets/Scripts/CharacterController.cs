@@ -17,7 +17,8 @@ public class CharacterController : MonoBehaviour
 
     [Header("Speed Curve")]
     public float speedCurveChange;
-    private float currentSpeedPos;
+   
+    public float currentSpeedPos;
 
     public AnimationCurve speedCurve;
 
@@ -25,9 +26,11 @@ public class CharacterController : MonoBehaviour
 
     public Transform player;
 
-    [Header("Wall Hit Sounds")]
+    [Header("Sounds")]
     public AudioClip[] wallHitSounds;
+    public AudioClip[] footstepClips;
     public AudioSource source;
+    public AudioSource footStepSource;
 
     [Header("Easy Mode?")]
     public bool easyMode;
@@ -49,11 +52,18 @@ public class CharacterController : MonoBehaviour
     {
         LookAtMouse();
         MovePlayer();
+
+        if (speed > topSpeed / 1.3f) footStepSource.clip = footstepClips[0];
+        else if (speed > topSpeed / 2f) footStepSource.clip = footstepClips[1];
+        else if (speed > topSpeed / 3f) footStepSource.clip = footstepClips[2];
+        else if (speed > topSpeed / 5f) footStepSource.clip = footstepClips[3];
+        else if (speed > topSpeed / 8f) footStepSource.clip = footstepClips[4];
+        else if (speed > topSpeed / 13f) footStepSource.clip = footstepClips[5];
+        footStepSource.PlayOneShot();
     }
 
     void FixedUpdate()
     {
-
     }
 
     public void boostOnKill()
