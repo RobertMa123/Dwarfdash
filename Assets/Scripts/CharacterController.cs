@@ -17,7 +17,8 @@ public class CharacterController : MonoBehaviour
 
     [Header("Speed Curve")]
     public float speedCurveChange;
-   
+
+    [HideInInspector]
     public float currentSpeedPos;
 
     public AnimationCurve speedCurve;
@@ -46,20 +47,12 @@ public class CharacterController : MonoBehaviour
     void Start()
     {
         playerRigid = GetComponent<Rigidbody2D>();
-
+        footStepSource.Play();
     }
     void Update()
     {
         LookAtMouse();
         MovePlayer();
-
-        if (speed > topSpeed / 1.3f) footStepSource.clip = footstepClips[0];
-        else if (speed > topSpeed / 2f) footStepSource.clip = footstepClips[1];
-        else if (speed > topSpeed / 3f) footStepSource.clip = footstepClips[2];
-        else if (speed > topSpeed / 5f) footStepSource.clip = footstepClips[3];
-        else if (speed > topSpeed / 8f) footStepSource.clip = footstepClips[4];
-        else if (speed > topSpeed / 13f) footStepSource.clip = footstepClips[5];
-        footStepSource.PlayOneShot();
     }
 
     void FixedUpdate()
