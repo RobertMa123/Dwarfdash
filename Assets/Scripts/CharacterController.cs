@@ -23,10 +23,11 @@ public class CharacterController : MonoBehaviour
     {
         LookAtMouse();
 
-        Vector2 wantedDirection = Input.mousePosition - Camera.main.WorldToScreenPoint(transform.position);
-        Vector2 currentDirection = Vector2.Lerp(playerRigid.velocity, wantedDirection, Time.deltaTime);
+        Vector2 mousePos = Input.mousePosition - Camera.main.WorldToScreenPoint(transform.position);
+        Vector2 wantedDirection = mousePos.normalized * speed;
+        Vector2 currentDirection = Vector2.Lerp(playerRigid.velocity, wantedDirection, Time.deltaTime * delayMultiplier);
 
-        playerRigid.velocity = currentDirection * speed;
+        playerRigid.velocity = currentDirection;
 
     }
     
