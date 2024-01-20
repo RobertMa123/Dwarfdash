@@ -606,8 +606,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   multiplier: 1
+  speedUpMultiplier: 1.2
+  topSpeed: 15
   baseDelayMultiplier: 1
   player: {fileID: 1627024690}
+  easyMode: 1
 --- !u!4 &1627024690
 Transform:
   m_ObjectHideFlags: 0
