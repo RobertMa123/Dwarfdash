@@ -8,8 +8,16 @@ public class CharacterController : MonoBehaviour
     public float speed;
     public float multiplier;
 
+<<<<<<< HEAD
     public float baseDelayMultiplier;
 
+=======
+<<<<<<< Updated upstream
+=======
+    public float baseDelayMultiplier;
+
+>>>>>>> Stashed changes
+>>>>>>> main
     public Transform player;
 
     private Rigidbody2D playerRigid;
@@ -21,6 +29,7 @@ public class CharacterController : MonoBehaviour
     }
     void Update()
     {
+        float delayMultiplier = baseDelayMultiplier * Vector2.Distance(player.transform.position, Input.mousePosition);
         LookAtMouse();
         float reverseDistance = baseDelayMultiplier - Vector2.Distance(Input.mousePosition, playerRigid.position);
         float fixedDistance = Mathf.Clamp(reverseDistance, 0f, 4f);
