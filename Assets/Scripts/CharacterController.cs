@@ -8,7 +8,7 @@ public class CharacterController : MonoBehaviour
     public float speed;
     public float multiplier;
 
-    public float delayMultiplier;
+    public float baseDelayMultiplier;
 
     public Transform player;
 
@@ -25,7 +25,7 @@ public class CharacterController : MonoBehaviour
 
         Vector2 mousePos = Input.mousePosition - Camera.main.WorldToScreenPoint(transform.position);
         Vector2 wantedDirection = mousePos.normalized * speed;
-        Vector2 currentDirection = Vector2.Lerp(playerRigid.velocity, wantedDirection, Time.deltaTime * delayMultiplier);
+        Vector2 currentDirection = Vector2.Lerp(playerRigid.velocity, wantedDirection, Time.deltaTime * baseDelayMultiplier);
 
         playerRigid.velocity = currentDirection;
 
@@ -42,11 +42,5 @@ public class CharacterController : MonoBehaviour
 
         
         transform.rotation = Quaternion.AngleAxis((Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg), Vector3.forward);
-    }
-
-    private void MovePlayer()
-    {
-        Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        player.position = Vector2.Lerp(player.position, mousePos, Time.deltaTime * speed * multiplier);
     }
 }
