@@ -22,10 +22,14 @@ public class CharacterController : MonoBehaviour
     void Update()
     {
         LookAtMouse();
+        float reverseDistance = baseDelayMultiplier - Vector2.Distance(Input.mousePosition, playerRigid.position);
+        float fixedDistance = Mathf.Clamp(reverseDistance, 0f, 4f);
+        float delay = baseDelayMultiplier + fixedDistance;
+
 
         Vector2 mousePos = Input.mousePosition - Camera.main.WorldToScreenPoint(transform.position);
         Vector2 wantedDirection = mousePos.normalized * speed;
-        Vector2 currentDirection = Vector2.Lerp(playerRigid.velocity, wantedDirection, Time.deltaTime * baseDelayMultiplier);
+        Vector2 currentDirection = Vector2.Lerp(playerRigid.velocity, wantedDirection, Time.deltaTime * delay);
 
         playerRigid.velocity = currentDirection;
 
