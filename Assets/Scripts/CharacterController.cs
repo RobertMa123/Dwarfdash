@@ -7,12 +7,18 @@ public class CharacterController : MonoBehaviour
     [Header("Speed Options")]
     public float speed;
     public float multiplier;
-    public float speedUpMultiplier;
+    public float slowMultiplier;
     public float topSpeed;
 
     [Header("OnKill")]
     public float speedBoostOnKill;
     public float speedImmediateBoost;
+
+    [Header("Speed Curve")]
+    public float speedCurveChange;
+    private float currentSpeedPos;
+
+    public AnimationCurve speedCurve;
 
     public float baseDelayMultiplier;
 
@@ -27,6 +33,7 @@ public class CharacterController : MonoBehaviour
     void Start()
     {
         playerRigid = GetComponent<Rigidbody2D>();
+
     }
     void Update()
     {
@@ -41,7 +48,8 @@ public class CharacterController : MonoBehaviour
 
     public void boostOnKill()
     {
-        speed += speedBoostOnKill;
+        //TODO: FIX WITH OVER TIME (COUROTINE??)
+        currentSpeedPos -= speedBoostOnKill;
         var direction = Input.mousePosition - Camera.main.WorldToScreenPoint(transform.position);
         Vector2 speedBoost = direction.normalized * speedImmediateBoost;
         playerRigid.AddForce(new Vector2 (speedImmediateBoost, 0));
@@ -57,7 +65,9 @@ public class CharacterController : MonoBehaviour
 
     private void MovePlayer()
     {
-        
+        //Clamp currentSpeedPos between 0 and 1 where 0 is max speed and 1 is nothing
+        Mathf.Clamp(currentSpeedPos, 0, 1);
+
         if (easyMode)    //Cap speed at some topSpeed on easy mode
         {
             if(speed >= topSpeed)
@@ -65,7 +75,9 @@ public class CharacterController : MonoBehaviour
                 speed = topSpeed;
             }
         }
-        speed += Time.deltaTime * speedUpMultiplier;  //Increase player speed over time
+        currentSpeedPos += Time.deltaTime * slowMultiplier;
+
+        speed = speedCurve.Evaluate(currentSpeedPos) * topSpeed;
           
         float delayMultiplier = baseDelayMultiplier * Vector2.Distance(player.transform.position, Input.mousePosition);
 
@@ -76,7 +88,7 @@ public class CharacterController : MonoBehaviour
 
         Vector2 mousePos = Input.mousePosition - Camera.main.WorldToScreenPoint(transform.position);
         Vector2 wantedDirection = mousePos.normalized * speed;
-        Vector2 currentDirection = Vector2.Lerp(playerRigid.velocity, wantedDirection, Time.deltaTime * delay);
+        Vector2 currentDirection = Vector2.Lerp(playerRigid.velocity, wantedDirection, Time.deltaTime);
 
         playerRigid.velocity = currentDirection;
     }

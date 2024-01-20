@@ -13,6 +13,7 @@ public class combatSystem : MonoBehaviour
     private AudioSource attackSource;
 
     private CharacterController character;
+    public cinemachineControl camControl;
 
     private void Start()
     {
@@ -36,11 +37,12 @@ public class combatSystem : MonoBehaviour
         {
             if (collider != null)
             {
-                if (collider.gameObject.tag == "Enemy")
+                if (collider.gameObject.tag == "enemy")
                 {
                     Debug.Log("hit");
                     Destroy(collider.gameObject);
                     character.boostOnKill();
+                    camControl.lockAtPosition();
                 }
             }
         }
