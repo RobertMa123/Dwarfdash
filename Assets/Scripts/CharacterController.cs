@@ -10,6 +10,10 @@ public class CharacterController : MonoBehaviour
     public float speedUpMultiplier;
     public float topSpeed;
 
+    [Header("OnKill")]
+    public float speedBoostOnKill;
+    public float speedImmediateBoost;
+
     public float baseDelayMultiplier;
 
     public Transform player;
@@ -32,6 +36,14 @@ public class CharacterController : MonoBehaviour
 
     void FixedUpdate()
     {
+    }
+
+    public void boostOnKill()
+    {
+        speed += speedBoostOnKill;
+        var direction = Input.mousePosition - Camera.main.WorldToScreenPoint(transform.position);
+        Vector2 speedBoost = direction.normalized * speedImmediateBoost;
+        playerRigid.AddForce(new Vector2 (speedImmediateBoost, 0));
     }
 
     private void LookAtMouse()

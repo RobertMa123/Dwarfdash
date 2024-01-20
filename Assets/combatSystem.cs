@@ -12,6 +12,13 @@ public class combatSystem : MonoBehaviour
     private AudioClip inAttackRange;
     private AudioSource attackSource;
 
+    private CharacterController character;
+
+    private void Start()
+    {
+        character = GetComponent<CharacterController>();
+    }
+
     private void Update()
     {
         if (Input.GetMouseButtonDown(0))
@@ -23,12 +30,18 @@ public class combatSystem : MonoBehaviour
     private void attack()
     {
         //When attacking, check the overlap circle and then
-        Collider2D colliderHit = Physics2D.OverlapCircle(transform.position, attackArea);
-        if (colliderHit != null)
+        Collider2D[] colliderHit = Physics2D.OverlapCircleAll(transform.position, attackArea);
+
+        foreach (Collider2D collider in colliderHit)
         {
-            if (colliderHit.gameObject.tag == "Enemy")
+            if (collider != null)
             {
-                Destroy(colliderHit.gameObject);
+                if (collider.gameObject.tag == "Enemy")
+                {
+                    Debug.Log("hit");
+                    Destroy(collider.gameObject);
+                    character.boostOnKill();
+                }
             }
         }
     }
