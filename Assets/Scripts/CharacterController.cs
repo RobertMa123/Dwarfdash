@@ -50,6 +50,7 @@ public class CharacterController : MonoBehaviour
     {
         LookAtMouse();
         MovePlayer();
+        currentSpeedPos = Mathf.Abs(currentSpeedPos);
     }
 
     void FixedUpdate()

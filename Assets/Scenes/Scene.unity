@@ -505,7 +505,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -277.9, y: 111.5}
+  m_AnchoredPosition: {x: -277.9, y: -32}
   m_SizeDelta: {x: 213.8537, y: 104.2804}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &422471697
@@ -890,7 +890,7 @@ Transform:
   m_GameObject: {fileID: 674454047}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.5268836, y: 5.540968, z: -9.650604}
+  m_LocalPosition: {x: -0.5268707, y: 5.540968, z: -9.650604}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -999,7 +999,7 @@ Transform:
   m_GameObject: {fileID: 747731725}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.5268836, y: 5.540968, z: -9.650604}
+  m_LocalPosition: {x: -0.5268707, y: 5.540968, z: -9.650604}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1325,33 +1325,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 20
-  slowMultiplier: 0.15
+  slowMultiplier: 0.1
   topSpeed: 30
   speedBoostOnKill: 0.4
   speedImmediateBoost: 10
   speedCurveChange: 0
-  currentSpeedPos: 0.3
+  currentSpeedPos: 0.2
   multiplierOfStaticness: 5
   speedCurve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0
-      value: 1
+      time: -0.020832062
+      value: 0.9811325
       inSlope: Infinity
-      outSlope: -0.49248832
+      outSlope: -0.42779
       tangentMode: 1
       weightedMode: 3
       inWeight: 0.33333334
-      outWeight: 0.87372166
+      outWeight: 0.8830884
     - serializedVersion: 3
-      time: 1.0030353
-      value: 0.009582721
-      inSlope: -50.324905
-      outSlope: -50.324905
+      time: 1.0113666
+      value: 0.00015278906
+      inSlope: -8.279464
+      outSlope: -8.279464
       tangentMode: 0
       weightedMode: 3
-      inWeight: 0.012612387
+      inWeight: 0.07559908
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
@@ -11582,7 +11582,8 @@ MonoBehaviour:
   - {fileID: 1249847445830068846, guid: a3e8cbc1238dc784f9630bda1a48dec2, type: 3}
   - {fileID: 2111026734308116440, guid: df76813a6c4b5734ca8ddf27c5b0785f, type: 3}
   - {fileID: 1249847445830068846, guid: 83a672b812aed184daaf7fe3c6947452, type: 3}
-  - {fileID: 1249847445830068846, guid: 70b91ccda55d1084cbe1b90b68e3e7bb, type: 3}
+  - {fileID: 8694865927861910379, guid: 28a1c38c102a0464898bbda85159cd31, type: 3}
+  - {fileID: 8694865927861910379, guid: c59db9985d889dd4da0cbdcd4719b5f2, type: 3}
   sizeOfEachPiece: 18
   maxScreenPieceCount: 8
 --- !u!4 &2099343743
