@@ -26,9 +26,13 @@ public class TitleScreen : MonoBehaviour
 
     public void Credits()
     {
-        SceneManager.LoadScene("Credits");
+        StartCoroutine(LoadLevel(3));
     }
 
+    public void ToTitleScreen()
+    {
+        StartCoroutine(LoadLevel(0));
+    }
     IEnumerator LoadLevel(int levelIndex)
     {
         transition.SetTrigger("Start");
