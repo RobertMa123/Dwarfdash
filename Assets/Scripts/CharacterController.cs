@@ -119,6 +119,10 @@ public class CharacterController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
+        if (other.gameObject.tag == "enemy")
+        {
+            onDeath();
+        }
         source.PlayOneShot(wallHitSounds[UnityEngine.Random.Range(1, wallHitSounds.Length)]);
     }
 

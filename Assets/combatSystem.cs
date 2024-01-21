@@ -10,6 +10,7 @@ public class combatSystem : MonoBehaviour
     private AudioClip attackClip;
     [SerializeField]
     private AudioClip attackClipHit;
+    public AudioClip[] goblinDeathSound;
     [SerializeField]
     private AudioSource source;
     [SerializeField]
@@ -49,6 +50,7 @@ public class combatSystem : MonoBehaviour
                     {
                         Debug.Log("hit");
                         source.PlayOneShot(attackClipHit);
+                        source.PlayOneShot(goblinDeathSound[Random.Range(0,goblinDeathSound.Length)]);
                         Destroy(collider.gameObject);
                         character.boostOnKill();
                         camControl.lockAtPosition();
