@@ -1275,13 +1275,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 20
-  slowMultiplier: 0.05
+  slowMultiplier: 0.15
   topSpeed: 30
   speedBoostOnKill: 0.4
   speedImmediateBoost: 10
-  speedCurveChange: 0.1
+  speedCurveChange: 0
   currentSpeedPos: 0.3
-  multiplierOfStaticness: 3
+  multiplierOfStaticness: 5
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -1344,7 +1344,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 3
+  m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0
   m_GravityScale: 0
@@ -11432,6 +11432,11 @@ MonoBehaviour:
   - {fileID: 8694865927861910379, guid: c59db9985d889dd4da0cbdcd4719b5f2, type: 3}
   - {fileID: 8694865927861910379, guid: 28a1c38c102a0464898bbda85159cd31, type: 3}
   - {fileID: 8694865927861910379, guid: 235f58beaa67734498444925dd44a0c3, type: 3}
+  - {fileID: 2111026734308116440, guid: 1aaa50f91a8f8e64aa9f23bdd26fed6c, type: 3}
+  - {fileID: 1249847445830068846, guid: a3e8cbc1238dc784f9630bda1a48dec2, type: 3}
+  - {fileID: 2111026734308116440, guid: df76813a6c4b5734ca8ddf27c5b0785f, type: 3}
+  - {fileID: 1249847445830068846, guid: 83a672b812aed184daaf7fe3c6947452, type: 3}
+  - {fileID: 1249847445830068846, guid: 70b91ccda55d1084cbe1b90b68e3e7bb, type: 3}
   sizeOfEachPiece: 18
   maxScreenPieceCount: 8
 --- !u!4 &2099343743
