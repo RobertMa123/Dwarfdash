@@ -11323,8 +11323,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerObject: {fileID: 1627024688}
   tiles:
-  - {fileID: 6945559159977019611, guid: 6fcc375e060288a4b8339b2592364689, type: 3}
-  sizeOfEachPiece: 8
+  - {fileID: 1249847445830068846, guid: 2ed32c348c7880e4da30cc76b55e29e4, type: 3}
+  sizeOfEachPiece: 17
   maxScreenPieceCount: 8
 --- !u!4 &2099343743
 Transform:
@@ -11335,7 +11335,7 @@ Transform:
   m_GameObject: {fileID: 2099343741}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.4364512, y: -0.76546687, z: 0.08135042}
+  m_LocalPosition: {x: 3.81, y: -0.76546687, z: 0.08135042}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

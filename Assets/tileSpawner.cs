@@ -39,7 +39,7 @@ public class tileSpawner : MonoBehaviour
 
     private void spawnNewTile()
     {
-        GameObject newSpawnedObject = Instantiate(tiles[randomNumberToSpawn - 1], new Vector2(0, piecesOnScreen[piecesOnScreen.Count - 1].transform.position.y + sizeOfEachPiece), Quaternion.identity);
+        GameObject newSpawnedObject = Instantiate(tiles[randomNumberToSpawn - 1], new Vector2(-18, piecesOnScreen[piecesOnScreen.Count - 1].transform.position.y + sizeOfEachPiece), Quaternion.identity);
         piecesOnScreen.Insert(0, newSpawnedObject);
 
         if (piecesOnScreen.Count >= maxScreenPieceCount)

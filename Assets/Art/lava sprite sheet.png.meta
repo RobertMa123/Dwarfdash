@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c93f6f8ad8141bf449a67cf1163b2b87
+guid: 15140611af228b047b63aba4d14e9be9
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -108,7 +108,91 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: lava sprite sheet_0
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 303
+        width: 1183
+        height: 1085
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65ea1e18913be504cbada947196460d7
+      internalID: 1319352426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lava sprite sheet_1
+      rect:
+        serializedVersion: 2
+        x: 1475
+        y: 300
+        width: 1188
+        height: 1088
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 604dd777c4cf7014f8e9a85ac5ac233b
+      internalID: 64431949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lava sprite sheet_2
+      rect:
+        serializedVersion: 2
+        x: 2765
+        y: 305
+        width: 1198
+        height: 1085
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ef6fd20ae9b9044fb205632911ef9f2
+      internalID: -510658660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lava sprite sheet_3
+      rect:
+        serializedVersion: 2
+        x: 4065
+        y: 300
+        width: 1185
+        height: 1088
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d140cb99adcf4fd42af40c7cc1c4e535
+      internalID: -1537990595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -119,7 +203,11 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      lava sprite sheet_0: 1319352426
+      lava sprite sheet_1: 64431949
+      lava sprite sheet_2: -510658660
+      lava sprite sheet_3: -1537990595
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
