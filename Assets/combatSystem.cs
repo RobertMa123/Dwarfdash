@@ -38,7 +38,7 @@ public class combatSystem : MonoBehaviour
     {
         //When attacking, check the overlap circle and then
         Collider2D[] colliderHit = Physics2D.OverlapCircleAll(transform.position, attackArea);
-
+        animator.SetBool("Attack", true);
         foreach (Collider2D collider in colliderHit)
         {
             if (collider != null)
@@ -52,19 +52,17 @@ public class combatSystem : MonoBehaviour
                         Destroy(collider.gameObject);
                         character.boostOnKill();
                         camControl.lockAtPosition();
-                        animator.SetBool("Attack", true);
-                        StartCoroutine(waitTillEndOfAnimation());
-
                     }
                 }
             }
-            animator.SetBool("Attack", false);
+           
         }
+        StartCoroutine(waitTillEndOfAnimation());
     }
 
     private IEnumerator waitTillEndOfAnimation()
     {
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(0.4f);
         animator.SetBool("Attack", false);
     }
 }
