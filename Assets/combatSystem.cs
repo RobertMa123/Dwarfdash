@@ -18,10 +18,12 @@ public class combatSystem : MonoBehaviour
 
     private CharacterController character;
     public cinemachineControl camControl;
+    public Animator animator;
 
     private void Start()
     {
         character = GetComponent<CharacterController>();
+        animator = GetComponent<Animator>();
     }
 
     private void Update()
@@ -50,9 +52,19 @@ public class combatSystem : MonoBehaviour
                         Destroy(collider.gameObject);
                         character.boostOnKill();
                         camControl.lockAtPosition();
+                        animator.SetBool("Attack", true);
+                        StartCoroutine(waitTillEndOfAnimation());
+
                     }
                 }
             }
+            animator.SetBool("Attack", false);
         }
+    }
+
+    private IEnumerator waitTillEndOfAnimation()
+    {
+        yield return new WaitForSeconds(0.3f);
+        animator.SetBool("Attack", false);
     }
 }

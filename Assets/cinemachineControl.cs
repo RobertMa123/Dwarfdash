@@ -13,6 +13,8 @@ public class cinemachineControl : MonoBehaviour
     private bool islockedAtPos;
     public float speedOfFix;
 
+    private float baseXPosition;
+
     private void Start()
     {
 

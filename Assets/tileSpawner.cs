@@ -20,11 +20,6 @@ public class tileSpawner : MonoBehaviour
     private List<GameObject> piecesOnScreen = new List<GameObject>();
 
     [SerializeField]
-    private GameObject beginningPiece1;
-    [SerializeField]
-    private GameObject beginningPiece2;
-
-    [SerializeField]
     private int maxScreenPieceCount;
 
     private void Start()
@@ -58,7 +53,7 @@ public class tileSpawner : MonoBehaviour
     {
         for (int i = 0; i < maxScreenPieceCount; i++)
         {
-            GameObject newObject = Instantiate(tiles[Random.Range(0, randomNumberToSpawn - 1)], new Vector2(0, sizeOfEachPiece * i), Quaternion.identity);
+            GameObject newObject = Instantiate(tiles[Random.Range(0, randomNumberToSpawn)], new Vector2(0, sizeOfEachPiece * i), Quaternion.identity);
             piecesOnScreen.Insert(0, newObject);
         }
     }
