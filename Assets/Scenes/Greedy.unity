@@ -890,7 +890,7 @@ Transform:
   m_GameObject: {fileID: 674454047}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.52728605, y: 5.540968, z: -9.650604}
+  m_LocalPosition: {x: -0.5994072, y: 5.540968, z: -9.650604}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -999,7 +999,7 @@ Transform:
   m_GameObject: {fileID: 747731725}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.52728605, y: 5.540968, z: -9.650604}
+  m_LocalPosition: {x: -0.5994072, y: 5.540968, z: -9.650604}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1072,7 +1072,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3156398118339d149a2de7130b67c3e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 7
+  speed: 8
 --- !u!50 &855239187
 Rigidbody2D:
   serializedVersion: 4
@@ -1325,7 +1325,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 20
-  slowMultiplier: 0.1
+  slowMultiplier: 0.05
   topSpeed: 30
   speedBoostOnKill: 0.47
   speedImmediateBoost: 10
@@ -11582,7 +11582,7 @@ MonoBehaviour:
   - {fileID: 2111026734308116440, guid: df76813a6c4b5734ca8ddf27c5b0785f, type: 3}
   - {fileID: 1249847445830068846, guid: 83a672b812aed184daaf7fe3c6947452, type: 3}
   - {fileID: 8694865927861910379, guid: c59db9985d889dd4da0cbdcd4719b5f2, type: 3}
-  - {fileID: 8694865927861910379, guid: c59db9985d889dd4da0cbdcd4719b5f2, type: 3}
+  - {fileID: 8694865927861910379, guid: 83b353f5fe16b6246958f13d6e77034f, type: 3}
   sizeOfEachPiece: 18
   maxScreenPieceCount: 8
 --- !u!4 &2099343743

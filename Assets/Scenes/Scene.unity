@@ -890,7 +890,7 @@ Transform:
   m_GameObject: {fileID: 674454047}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.5268707, y: 5.540968, z: -9.650604}
+  m_LocalPosition: {x: -0.59776497, y: 5.540968, z: -9.650604}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -999,7 +999,7 @@ Transform:
   m_GameObject: {fileID: 747731725}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.5268707, y: 5.540968, z: -9.650604}
+  m_LocalPosition: {x: -0.59776497, y: 5.540968, z: -9.650604}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1325,12 +1325,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 20
-  slowMultiplier: 0.1
-  topSpeed: 30
+  slowMultiplier: 0.05
+  topSpeed: 25
   speedBoostOnKill: 0.4
   speedImmediateBoost: 10
   speedCurveChange: 0
-  currentSpeedPos: 0.2
+  currentSpeedPos: 0.3
   multiplierOfStaticness: 5
   speedCurve:
     serializedVersion: 2
@@ -11583,7 +11583,7 @@ MonoBehaviour:
   - {fileID: 2111026734308116440, guid: df76813a6c4b5734ca8ddf27c5b0785f, type: 3}
   - {fileID: 1249847445830068846, guid: 83a672b812aed184daaf7fe3c6947452, type: 3}
   - {fileID: 8694865927861910379, guid: 28a1c38c102a0464898bbda85159cd31, type: 3}
-  - {fileID: 8694865927861910379, guid: c59db9985d889dd4da0cbdcd4719b5f2, type: 3}
+  - {fileID: 8694865927861910379, guid: 83b353f5fe16b6246958f13d6e77034f, type: 3}
   sizeOfEachPiece: 18
   maxScreenPieceCount: 8
 --- !u!4 &2099343743

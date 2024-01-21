@@ -13,6 +13,5 @@ public class MoveDeathWall : MonoBehaviour
     void Update()
     {
         rb.velocity = Vector3.up * speed;
-        speed += Time.deltaTime;
     }
 }
