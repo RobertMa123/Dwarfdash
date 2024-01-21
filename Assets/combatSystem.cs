@@ -53,7 +53,7 @@ public class combatSystem : MonoBehaviour
                         source.PlayOneShot(goblinDeathSound[Random.Range(0,goblinDeathSound.Length)]);
                         Destroy(collider.gameObject);
                         character.boostOnKill();
-                        camControl.lockAtPosition();
+                        //camControl.lockAtPosition();
                     }
                 }
             }
