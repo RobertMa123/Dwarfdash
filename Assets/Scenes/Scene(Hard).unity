@@ -260,7 +260,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 747731727}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -498,14 +498,14 @@ RectTransform:
   m_GameObject: {fileID: 422471695}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.1503, y: 1.1503, z: 1.1503}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 81489096}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -298, y: 132}
+  m_AnchoredPosition: {x: -293, y: 131}
   m_SizeDelta: {x: 153.146, y: 65.495}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &422471697
@@ -521,7 +521,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.8396226, g: 0.3257147, b: 0.23366857, a: 1}
+  m_Color: {r: 0.7830189, g: 0.24289225, b: 0.18098079, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -623,14 +623,14 @@ RectTransform:
   m_GameObject: {fileID: 476013832}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5569, y: 1.5569, z: 1.5569}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1699938508}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -0.00008276}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &476013834
@@ -1275,14 +1275,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a18715850b12f84a9edfcb075020478, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
+  speed: 30
   slowMultiplier: 0.15
   topSpeed: 30
   speedBoostOnKill: 0.4
   speedImmediateBoost: 10
   speedCurveChange: 0
-  currentSpeedPos: 0.3
-  multiplierOfStaticness: 5
+  currentSpeedPos: 0.18
+  multiplierOfStaticness: 6
   speedCurve:
     serializedVersion: 2
     m_Curve:
@@ -1313,7 +1313,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: b930ff7462facd842a512eb4df55fca2, type: 3}
   - {fileID: 8300000, guid: b643f2cbea0a94d4697d28fe4c186194, type: 3}
   source: {fileID: 1627024694}
-  easyMode: 1
+  easyMode: 0
   particle: {fileID: 1627024695}
   dead: 0
 --- !u!4 &1627024690
@@ -6434,7 +6434,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 5dc4afff35d1ec94bb9108f3ea031270, type: 3}
+  m_audioClip: {fileID: 8300000, guid: dafd3054be89194438643ab918578314, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -11391,7 +11391,7 @@ RectTransform:
   m_GameObject: {fileID: 1699938507}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5491676, y: 1.5491676, z: 1.5491676}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 476013833}
@@ -11399,7 +11399,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 107, y: -135}
+  m_AnchoredPosition: {x: 103, y: -132}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1699938509
