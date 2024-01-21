@@ -890,7 +890,7 @@ Transform:
   m_GameObject: {fileID: 674454047}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.6294985, y: 5.540968, z: -9.650604}
+  m_LocalPosition: {x: -0.29630256, y: 5.540968, z: -9.650604}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -999,7 +999,7 @@ Transform:
   m_GameObject: {fileID: 747731725}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.6294985, y: 5.540968, z: -9.650604}
+  m_LocalPosition: {x: -0.29630256, y: 5.540968, z: -9.650604}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1072,7 +1072,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3156398118339d149a2de7130b67c3e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4
+  speed: 6
 --- !u!50 &855239187
 Rigidbody2D:
   serializedVersion: 4
@@ -1275,7 +1275,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 20
-  slowMultiplier: 0.1
+  slowMultiplier: 0.05
   topSpeed: 30
   speedBoostOnKill: 0.4
   speedImmediateBoost: 10

@@ -16,6 +16,7 @@ public class CharacterController : MonoBehaviour
 
     [Header("Speed Curve")]
     public float speedCurveChange;
+    [HideInInspector]
     public float currentSpeedPos;
 
     [SerializeField]
