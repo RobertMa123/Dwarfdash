@@ -22,6 +22,8 @@ public class tileSpawner : MonoBehaviour
     [SerializeField]
     private int maxScreenPieceCount;
 
+    private int amountOnScreenCount;
+
     private void Start()
     {
         randomNumberToSpawn = tiles.Count;
@@ -31,7 +33,7 @@ public class tileSpawner : MonoBehaviour
     private void Update()
     {
         Vector2 playerPos = playerObject.transform.position;
-        if (playerPos.y > (piecesOnScreen[1].transform.position.y - (sizeOfEachPiece/2)))
+        if (playerPos.y > (piecesOnScreen[0].transform.position.y - (sizeOfEachPiece/2)))
         {
             spawnNewTile();
         }
@@ -39,7 +41,7 @@ public class tileSpawner : MonoBehaviour
 
     private void spawnNewTile()
     {
-        GameObject newSpawnedObject = Instantiate(tiles[randomNumberToSpawn - 1], new Vector2(-1.8f, piecesOnScreen[piecesOnScreen.Count - 1].transform.position.y + sizeOfEachPiece), Quaternion.identity);
+        GameObject newSpawnedObject = Instantiate(tiles[Random.Range(0, randomNumberToSpawn)], new Vector2(-1.8f, piecesOnScreen[0].transform.position.y + sizeOfEachPiece), Quaternion.identity);
         piecesOnScreen.Insert(0, newSpawnedObject);
 
         if (piecesOnScreen.Count >= maxScreenPieceCount)
