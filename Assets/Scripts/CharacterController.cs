@@ -115,6 +115,7 @@ public class CharacterController : MonoBehaviour
         {
             onDeath();
         }
+        source.PlayOneShot(wallHitSounds[UnityEngine.Random.Range(1, wallHitSounds.Length)]);
     }
 
     private void OnCollisionEnter2D(Collision2D other)
