@@ -40,13 +40,11 @@ public class CharacterController : MonoBehaviour
 
     public bool dead = false;
 
-    private Animator animator;
 
 
     void Start()
     {
         playerRigid = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>();
 
     }
     void Update()
@@ -102,7 +100,6 @@ public class CharacterController : MonoBehaviour
             onDeath();
         }
 
-        animator.SetFloat("runSpeed", 1 - currentSpeedPos);
 
 
         Vector2 mousePos = Input.mousePosition - Camera.main.WorldToScreenPoint(transform.position);

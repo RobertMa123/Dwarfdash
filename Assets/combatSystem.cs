@@ -23,7 +23,6 @@ public class combatSystem : MonoBehaviour
     private void Start()
     {
         character = GetComponent<CharacterController>();
-        animator = GetComponent<Animator>();
     }
 
     private void Update()
@@ -32,6 +31,7 @@ public class combatSystem : MonoBehaviour
         {
             attack();
         }
+        animator.SetFloat("runSpeed", 1 - character.currentSpeedPos);
     }
 
     private void attack()
